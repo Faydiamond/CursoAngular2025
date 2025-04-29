@@ -1,0 +1,16 @@
+<h1>Hola Mundo</h1>
+<h2>CounterComponent</h2>
+
+<h4>{{ counter }}</h4>
+
+<button (click)="increaseNumber()" class="btn btn-primary">+</button>
+<button (click)="decreaseNumber()" class="btn btn-danger">-</button>
+<button (click)="reset()" class="btn btn-danger" class="btn btn-warning">
+  Reset
+</button>
+<hr />
+<h4>Signal</h4>
+<h4>{{ counterSignal() }}</h4>
+<button (click)="increaseNumberSignal()" class="btn btn-primary">+</button>
+<button (click)="decreaseNumberSignal()" class="btn btn-danger">-</button>
+<button (click)="resetSignal()" class="btn btn-warning">Reset</button>
