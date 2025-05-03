@@ -1,0 +1,20 @@
+<h3>{{ listName() }}</h3>
+<ul>
+  @for (chracter of chracters(); track chracter.id;let idx = $index) { @if(
+  (chracter?.power ?? 0 )> 500 ){
+  <li>
+    <span> {{ idx + 1 }} - {{ chracter.name }} </span>
+    <strong
+      [class.text-danger]="(chracter?.power ?? 0) >= 8000"
+      [class.text-info]="(chracter?.power ?? 0) < 8000"
+    >
+      {{ chracter?.power ?? "Sin dato" }}
+    </strong>
+  </li>
+
+  }@else {
+  <li>
+    <strong>Aqui no hay nadie con un poder mayor a 500</strong>
+  </li>
+  } }
+</ul>

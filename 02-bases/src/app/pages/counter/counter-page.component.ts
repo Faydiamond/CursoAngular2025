@@ -10,6 +10,7 @@ export class CounterPageComponent {
   counterSignal = signal(5);
 
   constructor() {
+    /*
     setInterval(() => {
       if (this.counter === undefined) {
         this.counter = 0;
@@ -21,7 +22,7 @@ export class CounterPageComponent {
       console.log(`Counter signal: ${this.counterSignal()}`);
 
       this.counter += 1;
-    }, 2500);
+    }, 2500);*/
   }
 
   increaseNumber(): number {
@@ -32,7 +33,7 @@ export class CounterPageComponent {
   }
 
   decreaseNumber(): number {
-    if (this.counter === 0 || this.counter === undefined) {
+    if (this.counter === undefined || this.counter <= 0) {
       return 0;
     }
     return (this.counter -= 5);
@@ -50,6 +51,6 @@ export class CounterPageComponent {
   }
 
   decreaseNumberSignal() {
-    this.counterSignal.update((current) => current - 5);
+    this.counterSignal.update((current) => (current > 0 ? current - 5 : 0));
   }
 }
