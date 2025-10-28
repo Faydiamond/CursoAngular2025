@@ -1,0 +1,5 @@
+.nav-active {
+  color: white !important;
+  background-color: #007bff; /* Opcional: fondo azul */
+  font-weight: bold;
+}

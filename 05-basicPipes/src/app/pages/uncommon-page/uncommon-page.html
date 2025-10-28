@@ -1,0 +1,73 @@
+<section>
+  <h2> {{ title }} </h2>
+  <h4> {{ subtitle }} </h4>
+</section>
+<div class="row text-center mt-4 justify-content-center">
+  <!-- Stat 1 -->
+  <div class="col-sm-6 col-md-6 mb-6">
+    <app-card  title="i18nSelectPipe">
+      <p>Saludos a {{ client().name }}, es un placer {{ client().gender | i18nSelect:invitationMap  }} </p>
+      <div class="d-grid">
+        <button class="btn btn-outline-primary" (click)="changeClient()"> Click </button>
+      </div>
+    </app-card>
+  </div>
+  <div class="col-sm-6 col-md-6 mb-6">
+    <app-card  title="i18nP;uralPipe">
+      <p> Actualmente hay {{ clients().length | i18nPlural:clientsMap() }}  </p>
+      <div class="d-grid">
+        <button [disabled]="clients().length<=0"  class="btn btn-outline-primary" (click)="deleteClient()"> Borrar cliente </button>
+      </div>
+    </app-card>
+  </div>
+</div>
+<div class="row text-center mt-4 justify-content-center">
+  <div class="col-sm-4 col-md-4  mb-4">
+    <app-card  title="i18nP;uralPipe">
+      <b>Original</b>
+      <p class="text-primary">
+        {{ clients().join(', ') }}
+      </p>
+      <b class="mt-2">Slice:02</b>
+      <p class="text-primary">
+        {{ clients() | slice:0:2   }}
+      </p>
+    </app-card>
+  </div>
+  <div class="col-sm-4 col-md-4  mb-4">
+    <app-card  title="JsonPipe">
+      <pre class="text-primary">{{ clients() | json }}</pre>
+      <pre class="text-primary">{{ client()  | json }}</pre>
+      <p class="text-primary">{{ clients().join(", ") | json | uppercase}}</p>
+    </app-card>
+  </div>
+  <div class="col-sm-4 col-md-4  mb-4">
+    <app-card  title="KeyVAliePipe">
+      <!-- <pre> {{ profile | keyvalue | json}} </pre>-->
+       <ul>
+        @for (item of profile | keyvalue; track $index) {
+          <li>
+            <strong class="text-primary"> {{ item.key | titlecase}} </strong>
+            <span> {{ item.value }} </span>
+          </li>
+        }
+       </ul>
+    </app-card>
+  </div>
+
+</div>
+<div class="row text-center mt-4 justify-content-center">
+    <div class="col-sm-4 col-md-4  mb-4">
+    <app-card  title="AsyncPipe">
+
+      @if( promiseValue | async ; as value ) {
+        <p class="text-primary"> {{ value }} </p>
+      }@else {
+        <p class="text-accent"> Cargando.. </p>
+      }
+      <h3>Observable</h3>
+      <p class="text-danger"> {{ myObservableTimer | async}} </p>
+    </app-card>
+  </div>
+
+</div>

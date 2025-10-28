@@ -1,0 +1,97 @@
+<section>
+  <h2> {{ title }} </h2>
+</section>
+<div class="row text-center mt-2">
+    <!-- Stat 1 -->
+    <div class="col-md-4 mb-4">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-muted">Lowercase Pipe</h6>
+          <h3 class="card-title text-primary">{{ nameUpper() | lowercase }}</h3>
+          <p class="card-text text-muted small"> {{ nameUpper() }} </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stat 2 -->
+    <div class="col-md-4 mb-4">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-muted">Uppercase pipe</h6>
+          <h3 class="card-title text-success"> {{ nameLower() | uppercase }} </h3>
+          <p class="card-text text-muted small"> {{ nameLower() }} </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stat 3 -->
+    <div class="col-md-4 mb-4">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-muted">Titlecase pipe</h6>
+          <h3 class="card-title text-info"> {{ fullName() | uppercase}} </h3>
+          <p class="card-text text-muted small">{{ fullName() }}</p>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="row text-center mt-2">
+    <!-- Stat 1 -->
+    <div class="col-md-6 mb-4">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-muted"> Custom Date </h6>
+          <h3 class="card-title text-primary">{{ date() | date }}</h3>
+          <p class="card-text text-muted small"> {{ date() }} </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stat 2 -->
+    <div class="col-md-6 mb-4">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-muted">Date | short | GMT-6</h6>
+          <h3 class="card-title text-primary">{{ date() | date:'short':'GMT-6' }}</h3>
+          <p class="card-text text-muted small"> {{ date() }} </p>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="row text-center mt-2">
+    <!-- Stat 1 -->
+    <div class="col-md-6 mb-4">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-muted"> Custom Date </h6>
+          <h3 class="card-title text-primary">{{ date() | date:'dd/MM/yyyy' }}</h3>
+          <p class="card-text text-muted small"> {{ date() }} </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stat 2 -->
+    <div class="col-md-6 mb-4">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-muted">Date pipe</h6>
+          <h3 class="card-title text-primary">{{ date() | date:'EEEE d,MMMM' }}</h3>
+          <p class="card-text text-muted small"> {{ date() }} </p>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm-8">
+       <span>Local actual es: <span class="badge rounded-pill bg-success me-2"> {{CurrentLocal()}} </span></span>
+      <button class="badge rounded-pill bg-primary me-2" (click)="changeLocale('es')">Espanol</button>
+      <button class="badge rounded-pill bg-primary me-2" (click)="changeLocale('fr')">Frances</button>
+      <button class="badge rounded-pill bg-primary me-2" (click)="changeLocale('en')">Ingles</button>
+    </div>
+  </div>
+</div>

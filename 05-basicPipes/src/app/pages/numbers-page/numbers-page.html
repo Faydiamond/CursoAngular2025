@@ -1,0 +1,48 @@
+<section>
+  <h2> {{ title }} </h2>
+</section>
+<div class="row text-center mt-2">
+    <!-- Stat 1 -->
+    <div class="col-md-3 mb-4">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-muted">Number:1-2-2</h6>
+          <h3 class="card-title text-primary"> {{ totalSells() | number:'1.2-2' }} </h3>
+          <p class="card-text text-muted small"> {{ totalSells() }} </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stat 2 -->
+    <div class="col-md-3 mb-4">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-muted">Number:1.1-2</h6>
+          <h3 class="card-title text-primary"> {{ totalSells() + 1234 | number:'1.1-2' }} </h3>
+          <p class="card-text text-muted small"> {{ totalSells() }} </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stat 3 -->
+    <div class="col-md-3 mb-4">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-muted">Currency</h6>
+          <h3 class="card-title text-info"> {{ totalSells() | currency:'CAD':'symbol-narrow':'1.2-2'  }} </h3>
+          <p class="card-text text-muted small"> {{ totalSells() }}  </p>
+        </div>
+      </div>
+    </div>
+
+      <!-- Stat 4 -->
+    <div class="col-md-3 mb-4">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-muted">Percent</h6>
+          <h3 class="card-title text-info"> {{ percent() | percent:'1.2-2'}} </h3>
+          <p class="card-text text-muted small"> {{ percent() }}  </p>
+        </div>
+      </div>
+    </div>
+  </div>

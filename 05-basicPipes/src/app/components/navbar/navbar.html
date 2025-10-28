@@ -1,0 +1,32 @@
+<!--
+<ul class="list-group">
+  @for( route of routes;track $index) {
+      <li  [routerLink]="route.path"  routerLinkActive="text-accent" class="list-group-item">  {{ route.title }} </li>
+  }
+</ul>
+-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        @for( route of routes; track $index ) {
+          <li class="nav-item">
+             <a class="nav-link"
+               routerLinkActive="nav-active"
+               [routerLink]="route.path"
+               aria-current="page">
+              {{route.title}}
+            </a>
+          </li>
+        }
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
