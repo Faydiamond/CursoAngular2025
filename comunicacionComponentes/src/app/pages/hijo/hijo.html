@@ -1,0 +1,5 @@
+<p>  {{ userData.name}} </p>
+
+
+<input type="text" #txtName (keyup.enter)="onClickName(txtName.value)">
+<button (click)="onClickName(txtName.value)" >Enviar</button>

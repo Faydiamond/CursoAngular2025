@@ -1,0 +1,7 @@
+componentes => piezas de código reutilizable si esta dentro de una carpeta se realciona con esta ultima.
+
+layouts=> componente pa identificar router outlet
+
+resources
+
+rjx resources => cuando se carga  cuando esta la data, cuando hay error

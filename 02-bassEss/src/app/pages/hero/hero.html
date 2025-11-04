@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="sm-12">
+    <div class="card" style="width: 18rem;">
+
+      <div class="card-body">
+        <h5 class="card-title"> {{ name()  | uppercase  }} </h5>
+        <p class="card-text">{{heroDesc()}}</p>
+        <button class="btn btn-primary" (click)="changeHero()">GChange Hero</button><br>
+        <button class="btn btn-primary mt-2" (click)="resetForm()">Reset</button>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,4 @@
+Angular desde la versión 17 esta basado en señales, ngular es mas rápido que react en la renderización de componentes y se logro con senales
+
+
+antes eran modulos

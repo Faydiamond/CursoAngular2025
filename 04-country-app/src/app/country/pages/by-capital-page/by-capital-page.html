@@ -1,0 +1,27 @@
+
+<app-search-input placeHolder="Buscar por capital"
+  (datosEnviados)="country.set($event)"
+
+/>
+
+
+@if(countryResources.error()) {
+  <div class="container mt-2">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="alert alert-danger position-relative">
+          <button type="button" class="btn-close position-absolute top-0 end-0 m-2"
+                        aria-label="Close"></button>
+          <p> {{ countryResources.error() }} </p>
+        </div>
+      </div>
+    </div>
+  </div>
+}
+@if( countryResources.hasValue() ) {
+  <app-country-list   [countries]="countryResources.value()!" />
+
+  <!--- countries() -->
+}
+
+
